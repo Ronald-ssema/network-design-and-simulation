@@ -2,7 +2,7 @@
 
 [← Project overview](../README.md)
 
-Configuration summary for the completed coursework, based on the project brief and implementation account.
+Device inventory, addressing plan, and service configuration for the small-office LAN.
 
 ## Device inventory
 
@@ -18,7 +18,7 @@ Configuration summary for the completed coursework, based on the project brief a
 
 ## Addressing and DHCP
 
-The addressing plan uses the private network **192.168.1.0/24**, subnet mask **255.255.255.0**, and default gateway **192.168.1.1**. The wireless router provides DHCP and acts as the default gateway in the assignment scenario. The addressing plan reserves consistent addresses for clients, printers, and servers.
+The addressing plan uses the private network **192.168.1.0/24**, subnet mask **255.255.255.0**, and default gateway **192.168.1.1**. The wireless router provides DHCP and acts as the default gateway in the lab. The addressing plan reserves consistent addresses for clients, printers, and servers.
 
 | Device / role | IPv4 address | Allocation |
 | --- | --- | --- |
@@ -51,7 +51,6 @@ The DNS server at `192.168.1.2` maps the lab hostname `www.pollyvacher.ac.uk` to
 
 The hostname is used inside the Packet Tracer simulation. Open `http://www.pollyvacher.ac.uk` in a simulated client's browser when exploring the lab.
 
-
 ## Implementation notes
 
-The topology includes a central switch and a Cisco 2911 router in addition to the wireless router specified in the brief. Consult the saved device configurations for interface-level details. This portfolio covers the local network and its internal services; external internet connectivity is outside the documented test coverage.
+Wired endpoints connect through the central switch. The topology also includes a Cisco 2911 router and a wireless router. Interface settings are available in the saved simulation. The documented tests cover the LAN and internal services; external internet access is not covered.

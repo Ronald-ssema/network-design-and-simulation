@@ -32,17 +32,7 @@ Designed and implemented a simulated small-office LAN connecting six PCs, two pr
 
 Completed and passed the coursework, including device-to-device connectivity checks for at least two device pairs, DNS resolution, and HTTP access from both a PC and a mobile device.
 
-The simulation file and original topology image are included. Test-output screenshots are still to be added to this portfolio. The [testing guide](docs/validation.md) explains how to repeat the checks.
-
-## Skills demonstrated
-
-| Skill | Application in this project |
-| --- | --- |
-| Network design | Combined wired endpoints, wireless clients, and shared services in one office topology |
-| IPv4 addressing and DHCP | Planned a `/24` network with gateway settings and address reservations |
-| Wireless security | Applied WPA2-Enterprise/AES with centralised authentication |
-| DNS and HTTP configuration | Connected hostname resolution to an internal web service |
-| Network validation | Checked connectivity and service access across PC and mobile endpoints |
+The repository includes the simulation file and topology screenshot. Test outputs are not included. See the [testing guide](docs/validation.md) to repeat the connectivity and service checks.
 
 ## Open the lab
 
@@ -58,6 +48,6 @@ The hostname `www.pollyvacher.ac.uk` is used inside the simulation. Open it from
 - [Testing and reproduction](docs/validation.md) — connectivity, DNS, and HTTP checks.
 - [Original topology image](docs/images/network-topology.png) — full-size Packet Tracer screenshot.
 
-## Next development steps
+## Further development
 
-Publish the original test screenshots and a sanitised configuration record, then extend the lab with VLAN segmentation and access-control rules.
+Possible extensions include VLAN segmentation and access-control rules to separate client and server traffic.

@@ -2,7 +2,7 @@
 
 [← Project overview](../README.md)
 
-Connectivity, DNS resolution, and web access were covered in the completed coursework. The table below summarises the checks, followed by a guide for repeating them in Packet Tracer. Original command outputs and test screenshots are still to be added.
+The coursework covered device connectivity, DNS resolution, and web access. This guide describes how to repeat those checks in Packet Tracer. Original test outputs are not included in the repository.
 
 ## Test coverage
 
@@ -24,8 +24,6 @@ Connectivity, DNS resolution, and web access were covered in the completed cours
 6. On a PC and a mobile client, use an available name-resolution command such as `nslookup www.pollyvacher.ac.uk`. Command availability depends on the simulated endpoint; record the actual supported command and output used.
 7. On both clients, use the simulated web browser to open `http://www.pollyvacher.ac.uk` and capture the loaded page.
 
-## Evidence to add
+## Available files
 
-Add original coursework screenshots showing DHCP reservations, wireless configuration with credentials hidden, two connectivity checks, the DNS record, and PC/mobile DNS and HTTP tests. Record the source device, expected result, actual result, and Packet Tracer version alongside each image.
-
-The topology screenshot is already available in [the image folder](images/network-topology.png). It documents device layout; test outputs provide the separate evidence for service behaviour.
+The [topology screenshot](images/network-topology.png) shows the device layout. Open the `.pkt` file linked from the [project overview](../README.md) to inspect the configuration and run the checks.
