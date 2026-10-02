@@ -1,123 +1,63 @@
-# Network Design & Simulation
-### Small-office LAN, DHCP, enterprise wireless security, DNS & HTTP
+# Small Office Network Design & Implementation
 
-**Author: Ronald Ssema** · **Platform: Cisco Packet Tracer** · **Project type: Academic network simulation** · **Outcome: Coursework passed**
+**Cisco Packet Tracer · IPv4 & DHCP · WPA2-Enterprise · DNS & HTTP**
 
-A completed Cisco Packet Tracer coursework project covering the design and implementation of a small-office local area network (LAN). The project combines wired and wireless connectivity, DHCP address reservations, WPA2-Enterprise wireless security, and DNS and HTTP services.
+Designed and implemented a simulated small-office LAN connecting six PCs, two printers, a smartphone, and a tablet. The project combines wired and wireless access, reserved IP addressing, enterprise wireless authentication, and internal DNS and web services.
 
-The author reports completing and passing the coursework against the supplied brief. Configuration details below follow that brief and the author's completion statement; the topology image shows the submitted design.
+**By [Ronald Ssema](https://github.com/Ronald-ssema)** · Completed academic project
 
-[Download the Packet Tracer project](https://github.com/Ronald-ssema/network-design-and-simulation/raw/refs/heads/main/Network%20Design%20and%20Simulation%20using%20Cisco%20Packet%20Tracer.pkt) · [View the full topology](docs/images/network-topology.png) · [Review the testing documentation](docs/validation.md)
+[Download the simulation](https://github.com/Ronald-ssema/network-design-and-simulation/raw/refs/heads/main/Network%20Design%20and%20Simulation%20using%20Cisco%20Packet%20Tracer.pkt) · [Configuration details](docs/network-design.md) · [Testing guide](docs/validation.md)
 
-## Network topology
+## Network at a glance
 
-![Cisco Packet Tracer network topology with six PCs, two printers, three servers, a central switch, a router, and wireless clients](docs/images/network-topology.png)
+![Packet Tracer topology showing wired PCs, printers and servers connected through a central switch, plus routing and wireless access for a tablet and smartphone](docs/images/network-topology.png)
 
-*Original Packet Tracer topology screenshot. Device names identify the intended roles within the lab.*
+| Area | Implementation |
+| --- | --- |
+| Endpoints | Six PCs, two printers, one smartphone, and one tablet |
+| Infrastructure | Central switch, Cisco 2911 router, and wireless router |
+| Addressing | `192.168.1.0/24` with DHCP reservations and gateway `192.168.1.1` |
+| Wireless access | WPA2-Enterprise with AES and RADIUS/AAA authentication |
+| Network services | DNS at `192.168.1.2` and HTTP at `192.168.1.3` |
+| Validation | Device connectivity, DNS resolution, and browser access from PC and mobile clients |
 
-## Design overview
+## What I built
 
-The wired portion uses a star layout: desktop PCs, printers, and servers connect to a central switch. A Cisco 2911 router sits above the switch, with a wireless router and two mobile clients shown at the top of the topology.
+- **A wired and wireless office LAN.** Connected workstations, shared printers, and servers through a central switch, with a wireless router serving mobile clients.
+- **A structured IPv4 addressing plan.** Used DHCP reservations to assign consistent addresses to PCs, printers, and service hosts.
+- **Enterprise wireless authentication.** Configured the `pollyvacher wireless` SSID with WPA2-Enterprise/AES and RADIUS/AAA.
+- **Internal DNS and web services.** Mapped `www.pollyvacher.ac.uk` to the HTTP server using a DNS A record, allowing clients to access the lab website by name.
 
-The design brings together three areas of network study:
+## Validation and outcome
 
-- **Wired LAN design:** a shared switching point for workstations, servers, and printers.
-- **Wireless access:** a tablet and smartphone associated with a wireless router.
-- **Network services:** separate servers labelled for DNS, HTTP, and AAA (authentication, authorisation, and accounting).
+Completed and passed the coursework, including device-to-device connectivity checks for at least two device pairs, DNS resolution, and HTTP access from both a PC and a mobile device.
 
-## Device inventory
+The simulation file and original topology image are included. Test-output screenshots are still to be added to this portfolio. The [testing guide](docs/validation.md) explains how to repeat the checks.
 
-| Component | Quantity | Visible device names / model | Role in the design |
-| --- | ---: | --- | --- |
-| Desktop PCs | 6 | PC1–PC6 | Wired client endpoints |
-| Central switch | 1 | Switch0 | Connection point for wired devices |
-| Router | 1 | Router1 / Cisco 2911 | Routing component |
-| Wireless router | 1 | Wireless Router2 / HomeRouter-PT-AC | Wireless client access |
-| Mobile clients | 2 | Tablet PC0, Smartphone0 | Wireless endpoints |
-| Printers | 2 | Printer1, Printer2 | Shared network peripherals |
-| Servers | 3 | DNS_Server, HTTP_Server, AAA_Server | DNS, web, and authentication service roles |
+## Skills demonstrated
 
-## Addressing and DHCP
+| Skill | Application in this project |
+| --- | --- |
+| Network design | Combined wired endpoints, wireless clients, and shared services in one office topology |
+| IPv4 addressing and DHCP | Planned a `/24` network with gateway settings and address reservations |
+| Wireless security | Applied WPA2-Enterprise/AES with centralised authentication |
+| DNS and HTTP configuration | Connected hostname resolution to an internal web service |
+| Network validation | Checked connectivity and service access across PC and mobile endpoints |
 
-The coursework specifies the private network **192.168.1.0/24**, subnet mask **255.255.255.0**, and default gateway **192.168.1.1**. The wireless router provides DHCP and acts as the default gateway in the assignment scenario. The addressing plan reserves consistent addresses for clients, printers, and servers.
+## Open the lab
 
-| Device / role | IPv4 address | Allocation in the brief |
-| --- | --- | --- |
-| Default gateway | 192.168.1.1 | Router LAN address |
-| DNS server | 192.168.1.2 | Reserved server address |
-| HTTP server | 192.168.1.3 | Reserved server address |
-| PC1 | 192.168.1.100 | DHCP reservation |
-| PC2 | 192.168.1.111 | DHCP reservation |
-| PC3 | 192.168.1.112 | DHCP reservation |
-| PC4 | 192.168.1.113 | DHCP reservation |
-| PC5 | 192.168.1.114 | DHCP reservation |
-| PC6 | 192.168.1.115 | DHCP reservation |
-| Printer1 | 192.168.1.253 | DHCP reservation |
-| Printer2 | 192.168.1.254 | DHCP reservation |
+1. [Download the Packet Tracer file](https://github.com/Ronald-ssema/network-design-and-simulation/raw/refs/heads/main/Network%20Design%20and%20Simulation%20using%20Cisco%20Packet%20Tracer.pkt).
+2. In **Cisco Packet Tracer**, select **File → Open** and choose the downloaded `.pkt` file.
+3. Explore device settings, then follow the [testing guide](docs/validation.md).
 
-Mobile-client and AAA-server addresses are not specified in the supplied brief and are not inferred here.
+The hostname `www.pollyvacher.ac.uk` is used inside the simulation. Open it from a simulated client's browser. Cisco Packet Tracer is required to run the lab; GitHub displays the documentation and topology image.
 
-## Wireless security
+## Technical documentation
 
-- **SSID:** `pollyvacher wireless`
-- **Security mode:** WPA2-Enterprise
-- **Encryption:** AES
-- **Authentication:** RADIUS/AAA, with an AAA server included in the topology
+- [Network design and configuration](docs/network-design.md) — device inventory, IP addressing, wireless security, and services.
+- [Testing and reproduction](docs/validation.md) — connectivity, DNS, and HTTP checks.
+- [Original topology image](docs/images/network-topology.png) — full-size Packet Tracer screenshot.
 
-The lab shared secret is omitted from this documentation. WPA2-Enterprise uses an authentication server; the router-to-RADIUS shared secret is distinct from user login credentials.
+## Next development steps
 
-## DNS and HTTP services
-
-The DNS server at `192.168.1.2` maps the lab hostname `www.pollyvacher.ac.uk` to the HTTP server at `192.168.1.3` using an **A record**. The coursework requires name-resolution and browser-access tests on both a PC and a mobile device.
-
-The hostname is used inside the Packet Tracer simulation. Open `http://www.pollyvacher.ac.uk` in a simulated client's browser when exploring the lab.
-
-## Testing and outcome
-
-**Coursework outcome: passed, as reported by the author.** The assessment covered:
-
-- Device-to-device connectivity checks for at least two device pairs.
-- DNS resolution on at least one PC and one mobile device.
-- HTTP access by hostname on at least one PC and one mobile device.
-
-The public repository currently includes the simulation file and topology image. Command outputs and service-test screenshots have not yet been added; see the [testing documentation](docs/validation.md) for the assessment criteria and reproduction steps.
-
-## Explore the project
-
-1. Download the `.pkt` file using the link above, or clone this repository:
-
-   ```bash
-   git clone https://github.com/Ronald-ssema/network-design-and-simulation.git
-   ```
-
-2. Open Cisco Packet Tracer.
-3. Select **File → Open**, then choose `Network Design and Simulation using Cisco Packet Tracer.pkt`.
-4. Inspect device interfaces, IP settings, router configuration, and server services.
-5. Use **Simulation** mode to explore packet flow and follow the [testing documentation](docs/validation.md) to reproduce the assessment checks.
-
-GitHub cannot run or interactively preview `.pkt` files. Cisco Packet Tracer is required. The version used to save this project has not been recorded.
-
-## Design notes
-
-The brief describes wired clients connected to the wireless router. The supplied topology includes a central switch and an additional Cisco 2911 router. The diagram is retained as the author's actual design; the addressing table records the coursework plan, rather than a fresh inspection of every saved device setting.
-
-The assignment also describes ISP/internet access. The available screenshot does not establish an external internet path, so this portfolio focuses on the local network and internal services.
-
-## Repository contents
-
-```text
-.
-├── README.md
-├── Network Design and Simulation using Cisco Packet Tracer.pkt
-└── docs/
-    ├── images/
-    │   └── network-topology.png
-    └── validation.md
-```
-
-## Future improvements
-
-- Add the coursework connectivity and service-test screenshots to the public repository.
-- Document device interfaces, DHCP reservation mappings, and the AAA configuration without credentials.
-- Record the Packet Tracer version used for reproducibility.
-- Explore VLAN segmentation and access-control rules as extensions to the lab.
+Publish the original test screenshots and a sanitised configuration record, then extend the lab with VLAN segmentation and access-control rules.

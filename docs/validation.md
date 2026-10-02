@@ -1,10 +1,12 @@
-# Coursework testing and reproduction
+# Testing and reproduction
 
-The author reports completing and passing the coursework. This page records the supplied assessment criteria and suggested steps for reproducing them. It is not a transcript of a new test run; exact device pairs, command output, and test screenshots have not yet been published.
+[← Project overview](../README.md)
 
-## Assessment coverage
+Connectivity, DNS resolution, and web access were covered in the completed coursework. The table below summarises the checks, followed by a guide for repeating them in Packet Tracer. Original command outputs and test screenshots are still to be added.
 
-| Area | Required check | Expected behaviour |
+## Test coverage
+
+| Area | Check | Expected behaviour |
 | --- | --- | --- |
 | LAN connectivity | Test at least two pairs of devices with suitable network commands. | Devices communicate successfully. |
 | DNS on a PC | Resolve `www.pollyvacher.ac.uk` using a networking command. | The hostname resolves to `192.168.1.3`. |
@@ -15,9 +17,9 @@ The author reports completing and passing the coursework. This page records the 
 ## Reproduce the checks
 
 1. Open the saved `.pkt` project in Cisco Packet Tracer.
-2. Check client addressing against the README table, including subnet mask `255.255.255.0`, gateway `192.168.1.1`, and DNS server `192.168.1.2`.
+2. Check client addressing against the [addressing table](network-design.md#addressing-and-dhcp), including subnet mask `255.255.255.0`, gateway `192.168.1.1`, and DNS server `192.168.1.2`.
 3. Inspect the wireless router's DHCP reservations and wireless settings. Check the SSID, WPA2-Enterprise/AES mode, and RADIUS server configuration.
-4. Test two device pairs. For example, from PC1, `ping 192.168.1.111` targets PC2; from PC3, `ping 192.168.1.113` targets PC4. These are suggested examples, not a record of the original assessment commands.
+4. Test two device pairs. For example, from PC1, `ping 192.168.1.111` targets PC2; from PC3, `ping 192.168.1.113` targets PC4. These example pairs can be used to repeat the connectivity checks.
 5. On the DNS server, inspect the A record for `www.pollyvacher.ac.uk` and confirm its target is `192.168.1.3`.
 6. On a PC and a mobile client, use an available name-resolution command such as `nslookup www.pollyvacher.ac.uk`. Command availability depends on the simulated endpoint; record the actual supported command and output used.
 7. On both clients, use the simulated web browser to open `http://www.pollyvacher.ac.uk` and capture the loaded page.
